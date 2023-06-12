@@ -1,0 +1,12 @@
+---
+- name: Set up MySQL DB server
+  hosts: db_servers
+  roles:
+    - python_init
+    - mysql_db
+
+- name: Set up webservers
+  hosts: web_servers
+  roles:
+    - python_init
+    - flask_web
